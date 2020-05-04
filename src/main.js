@@ -10,6 +10,9 @@ import Verte from 'verte';
 import 'verte/dist/verte.css';
 Vue.component(Verte.name, Verte);
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false;
 
 Vue.use(BootstrapVue);

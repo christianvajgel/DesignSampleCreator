@@ -1,10 +1,24 @@
 <template>
-    <div style="margin-bottom: 100px;">
+    <div style="margin-bottom: 100px;" id="designDiv">
         <div style="text-align: left; margin: 25px;">
             <h1 class="text-muted">Design Sample Creator</h1>
-            <h6>© Garden Hub Corp <sup>All rights reserved</sup></h6>
+            <h5>powered by Vue</h5>
+            <h6>© Garden Hub Corp <sup>LGPL-3.0</sup></h6>
+            <div>
+                <a :href="`https://github.com/christianvajgel/`" target="_blank">
+                    <font-awesome-icon id="github" :icon="github" class="iconSocialNetwork" style="--colorIcon: #24292e;"/>
+                </a>
+                <a :href="`https://www.linkedin.com/in/christianvajgel/`" target="_blank">
+                    <font-awesome-icon id="linkedIn" :icon="linkedIn" class="iconSocialNetwork" style="--colorIcon: #0275b4;"/>
+                </a>
+                <b-tooltip target="github" triggers="hover">
+                    GitHub
+                </b-tooltip>
+                <b-tooltip target="linkedIn" triggers="hover">
+                    LinkedIn
+                </b-tooltip>
+            </div>
         </div>
-
         <br>
 
         <div class="divLogoSlogan">
@@ -71,19 +85,43 @@
         <div id="divButtonTable">
             <table class="tableDivButtons" id="tableDivButtonShadow">
                 <tr class="trDivButtonsShadow">
-                    <td><b-button id="button1">Primary</b-button></td>
-                    <td><b-button id="button2">Warning</b-button></td>
-                    <td><b-button id="button3">Danger</b-button></td>
-                    <td><b-button id="button4">Info</b-button></td>
+                    <td><h5 class="text-muted" style="margin: 0 auto;">Normal</h5></td>
+                    <td><b-button class="personalizedButton" id="button1Normal" style="--colorBorder: #86af49; --colorText: #86af49; --colorBackground: #86af49;">Primary</b-button></td>
+                    <td><b-button class="personalizedButton" id="button2Normal" style="--colorBorder: #ffcc33; --colorText: #ffcc33; --colorBackground: #ffcc33;">Warning</b-button></td>
+                    <td><b-button class="personalizedButton" id="button3Normal" style="--colorBorder: #dc5539; --colorText: #dc5539; --colorBackground: #dc5539;">Danger</b-button></td>
+                    <td><b-button class="personalizedButton" id="button4Normal" style="--colorBorder: #904c2a; --colorText: #904c2a; --colorBackground: #904c2a;">Info</b-button></td>
+                </tr>
+                <tr class="trDivButtonsShadow">
+                    <td><h5 class="text-muted" style="margin: 0 auto;">Hover</h5></td>
+                    <td><b-button class="personalizedButton" id="button1Hover" style="--colorBorder: #86af49; --colorText: #86af49; --colorBackground: #86af49;">Primary</b-button></td>
+                    <td><b-button class="personalizedButton" id="button2Hover" style="--colorBorder: #ffcc33; --colorText: #ffcc33; --colorBackground: #ffcc33;">Warning</b-button></td>
+                    <td><b-button class="personalizedButton" id="button3Hover" style="--colorBorder: #dc5539; --colorText: #dc5539; --colorBackground: #dc5539;">Danger</b-button></td>
+                    <td><b-button class="personalizedButton" id="button4Hover" style="--colorBorder: #904c2a; --colorText: #904c2a; --colorBackground: #904c2a;">Info</b-button></td>
+                </tr>
+                <tr class="trDivButtonsShadow">
+                    <td><h5 class="text-muted" style="margin: 0 auto;">Active</h5></td>
+                    <td><b-button class="personalizedButton" id="button1Active" style="--colorBorder: #86af49; --colorText: #86af49; --colorBackground: #86af49;">Primary</b-button></td>
+                    <td><b-button class="personalizedButton" id="button2Active" style="--colorBorder: #ffcc33; --colorText: #ffcc33; --colorBackground: #ffcc33;">Warning</b-button></td>
+                    <td><b-button class="personalizedButton" id="button3Active" style="--colorBorder: #dc5539; --colorText: #dc5539; --colorBackground: #dc5539;">Danger</b-button></td>
+                    <td><b-button class="personalizedButton" id="button4Active" style="--colorBorder: #904c2a; --colorText: #904c2a; --colorBackground: #904c2a;">Info</b-button></td>
+                </tr>
+                <tr class="trDivButtonsShadow">
+                    <td><h5 class="text-muted" style="margin: 0 auto;">Disabled</h5></td>
+                    <td><b-button disabled class="personalizedButton" id="button1Disabled" style="--colorBorder: #86af49; --colorText: #86af49; --colorBackground: #86af49;">Primary</b-button></td>
+                    <td><b-button disabled class="personalizedButton" id="button2Disabled" style="--colorBorder: #ffcc33; --colorText: #ffcc33; --colorBackground: #ffcc33;">Warning</b-button></td>
+                    <td><b-button disabled class="personalizedButton" id="button3Disabled" style="--colorBorder: #dc5539; --colorText: #dc5539; --colorBackground: #dc5539;">Danger</b-button></td>
+                    <td><b-button disabled class="personalizedButton" id="button4Disabled" style="--colorBorder: #904c2a; --colorText: #904c2a; --colorBackground: #904c2a;">Info</b-button></td>
                 </tr>
                 <br>
                 <tr>
+                    <td></td>
                     <td><verte menuPosition="bottom" :draggable="true" model="hex" v-model="bPrimary"></verte></td>
                     <td><verte menuPosition="bottom" :draggable="true" model="hex" v-model="bWarning"></verte></td>
                     <td><verte menuPosition="bottom" :draggable="true" model="hex" v-model="bDanger"></verte></td>
                     <td><verte menuPosition="bottom" :draggable="true" model="hex" v-model="bInfo"></verte></td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td><p>{{ bPrimary.toUpperCase() }}</p></td>
                     <td><p>{{ bWarning.toUpperCase() }}</p></td>
                     <td><p>{{ bDanger.toUpperCase() }}</p></td>
@@ -92,15 +130,25 @@
             </table>
         </div>
         <br>
-        <b-button class="changeColorsButton" @click="changeStyle">Change colors</b-button>
+        <div>
+            <b-button class="returnDefaultButton" @click="returnDefault">Default colors</b-button>
+            <b-button class="saveDesignButton" @click="saveDesign">Save Design</b-button>
+            <b-button class="changeColorsButton" @click="changeStyle">Change colors</b-button>
+        </div>
+        <br>
+        <br>
     </div>
 </template>
 
 <script>
+    import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+    import htmlToImage from 'html-to-image';
     export default {
         name: "DesignSamples",
         data() {
             return {
+                github:faGithub,
+                linkedIn:faLinkedinIn,
                 componentKey:0,
                 logoColor:'#86AF49',
                 sloganColor:'#6c757d',
@@ -140,7 +188,86 @@
                 let divColor5 = document.getElementById("color5");
                 divColor5.style.backgroundColor = this.color5;
 
+                let button1Normal = document.getElementById("button1Normal");
+                button1Normal.style.setProperty('border-color',this.bPrimary,'important');
+                button1Normal.style.setProperty('color',this.bPrimary,'important');
+
+                let button1Hover = document.getElementById("button1Hover");
+                button1Hover.style.setProperty('border-color',this.bPrimary,'important');
+                button1Hover.style.setProperty('background-color',this.bPrimary,'important');
+
+                let button1Active = document.getElementById("button1Active");
+                button1Active.style.setProperty('border-color',this.bPrimary,'important');
+                button1Active.style.setProperty('background-color',this.bPrimary,'important');
+
+                let button1Disabled = document.getElementById("button1Disabled");
+                button1Disabled.style.setProperty('border-color',this.bPrimary,'important');
+                button1Disabled.style.setProperty('background-color',this.bPrimary,'important');
+
+
+                let button2Normal = document.getElementById("button2Normal");
+                button2Normal.style.setProperty('border-color',this.bWarning,'important');
+                button2Normal.style.setProperty('color',this.bWarning,'important');
+
+                let button2Hover = document.getElementById("button2Hover");
+                button2Hover.style.setProperty('border-color',this.bWarning,'important');
+                button2Hover.style.setProperty('background-color',this.bWarning,'important');
+
+                let button2Active = document.getElementById("button2Active");
+                button2Active.style.setProperty('border-color',this.bWarning,'important');
+                button2Active.style.setProperty('background-color',this.bWarning,'important');
+
+                let button2Disabled = document.getElementById("button2Disabled");
+                button2Disabled.style.setProperty('border-color',this.bWarning,'important');
+                button2Disabled.style.setProperty('background-color',this.bWarning,'important');
+
+
+                let button3Normal = document.getElementById("button3Normal");
+                button3Normal.style.setProperty('border-color',this.bDanger,'important');
+                button3Normal.style.setProperty('color',this.bDanger,'important');
+
+                let button3Hover = document.getElementById("button3Hover");
+                button3Hover.style.setProperty('border-color',this.bDanger,'important');
+                button3Hover.style.setProperty('background-color',this.bDanger,'important');
+
+                let button3Active = document.getElementById("button3Active");
+                button3Active.style.setProperty('border-color',this.bDanger,'important');
+                button3Active.style.setProperty('background-color',this.bDanger,'important');
+
+                let button3Disabled = document.getElementById("button3Disabled");
+                button3Disabled.style.setProperty('border-color',this.bDanger,'important');
+                button3Disabled.style.setProperty('background-color',this.bDanger,'important');
+
+
+                let button4Normal = document.getElementById("button4Normal");
+                button4Normal.style.setProperty('border-color',this.bInfo,'important');
+                button4Normal.style.setProperty('color',this.bInfo,'important');
+
+                let button4Hover = document.getElementById("button4Hover");
+                button4Hover.style.setProperty('border-color',this.bInfo,'important');
+                button4Hover.style.setProperty('background-color',this.bInfo,'important');
+
+                let button4Active = document.getElementById("button4Active");
+                button4Active.style.setProperty('border-color',this.bInfo,'important');
+                button4Active.style.setProperty('background-color',this.bInfo,'important');
+
+                let button4Disabled = document.getElementById("button4Disabled");
+                button4Disabled.style.setProperty('border-color',this.bInfo,'important');
+                button4Disabled.style.setProperty('background-color',this.bInfo,'important');
             },
+            saveDesign(){
+                htmlToImage.toJpeg(document.getElementById('designDiv'),
+                    { quality: 1,backgroundColor:'#f7f7f6' })
+                    .then(function (dataUrl) {
+                        let link = document.createElement('a');
+                        link.download = 'design_created_on_GardenHubPlatform.jpeg';
+                        link.href = dataUrl;
+                        link.click();
+                    });
+            },
+            returnDefault() {
+                location.reload();
+            }
         }
     }
 </script>
@@ -241,55 +368,116 @@
         color: #6c757d;
     }
 
-    #button1 {
+    .personalizedButton {
+        /*background-color: transparent !important;*/
+        /*border-color: var(--colorBorder) !important;*/
+        /*color: var(--colorText);*/
+    }
+
+    .personalizedButton:hover {
+        /*background-color: var(--colorBackground) !important;*/
+        /*border-color: var(--colorBorder) !important;*/
+        /*color: white !important;*/
+    }
+
+    #button1Normal {
         background-color: transparent;
         border-color: #86af49;
         color: #86af49;
     }
 
-    #button1:hover {
+    #button1Hover {
         background-color: #86af49;
         border-color: #86af49;
-        color: white;
+        color: white !important;
     }
 
-    #button2 {
+    #button1Active {
+        background-color: #86af49;
+        border-color: #86af49;
+        color: white !important;
+    }
+
+    #button1Disabled {
+        background-color: #86af49;
+        border-color: #86af49;
+        color: white !important;
+    }
+
+    #button2Normal {
         background-color: transparent;
         border-color: #ffcc33;
         color: #ffcc33;
     }
 
-    #button2:hover {
+    #button2Hover {
         background-color: #ffcc33;
         border-color: #ffcc33;
-        color: white;
+        color: white !important;
     }
 
-    #button3 {
+    #button2Active {
+        background-color: #ffcc33;
+        border-color: #ffcc33;
+        color: white !important;
+    }
+
+    #button2Disabled {
+        background-color: #ffcc33;
+        border-color: #ffcc33;
+        color: white !important;
+    }
+
+    #button3Normal {
         background-color: transparent;
         border-color: #dc5539;
         color: #dc5539;
     }
 
-    #button3:hover {
+    #button3Hover {
         background-color: #dc5539;
         border-color: #dc5539;
-        color: white;
+        color: white !important;
     }
 
-    #button4 {
+    #button3Active {
+        background-color: #dc5539;
+        border-color: #dc5539;
+        color: white !important;
+    }
+
+    #button3Disabled {
+        background-color: #dc5539;
+        border-color: #dc5539;
+        color: white !important;
+    }
+
+    #button4Normal {
         background-color: transparent;
         border-color: #904c2a;
         color: #904c2a;
     }
 
-    #button4:hover {
+    #button4Hover {
         background-color: #904c2a;
         border-color: #904c2a;
-        color: white;
+        color: white !important;
+    }
+
+    #button4Active {
+        background-color: #904c2a;
+        border-color: #904c2a;
+        color: white !important;
+    }
+
+    #button4Disabled {
+        background-color: #904c2a;
+        border-color: #904c2a;
+        color: white !important;
     }
 
     .changeColorsButton {
+        margin: 5px;
         background-color: transparent !important;
         border-color: #86af49 !important;
         color: #86af49 !important;
@@ -299,6 +487,42 @@
         background-color: #86af49 !important;
         border-color: #86af49 !important;
         color: white !important;
+    }
+
+    .saveDesignButton {
+        margin: 5px;
+        background-color: transparent !important;
+        border-color: #904c2a !important;
+        color: #904c2a !important;
+    }
+
+    .saveDesignButton:hover {
+        background-color: #904c2a !important;
+        border-color: #904c2a !important;
+        color: white !important;
+    }
+
+    .returnDefaultButton {
+        margin: 5px;
+        background-color: transparent !important;
+        border-color: #dc5539 !important;
+        color: #dc5539 !important;
+    }
+
+    .returnDefaultButton:hover {
+        background-color: #dc5539 !important;
+        border-color: #dc5539 !important;
+        color: white !important;
+    }
+
+    .iconSocialNetwork {
+        font-size: 2rem;
+        margin: 5px;
+        color: #6c757d
+    }
+
+    .iconSocialNetwork:hover {
+        color: var(--colorIcon) !important;
     }
 
 </style>
