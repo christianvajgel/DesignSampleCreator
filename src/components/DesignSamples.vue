@@ -5,7 +5,7 @@
             <h5>powered by Vue</h5>
             <h6>© Garden Hub Corp <sup>LGPL-3.0</sup></h6>
             <div>
-                <a :href="`https://github.com/christianvajgel/`" target="_blank">
+                <a :href="`https://github.com/christianvajgel/DesignSampleCreator`" target="_blank">
                     <font-awesome-icon id="github" :icon="github" class="iconSocialNetwork" style="--colorIcon: #24292e;"/>
                 </a>
                 <a :href="`https://www.linkedin.com/in/christianvajgel/`" target="_blank">
