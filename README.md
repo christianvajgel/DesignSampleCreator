@@ -4,4 +4,4 @@
 ## © Garden Hub Corp 
 ``` All rights reserved ```
 
-[Garden Hub Design Sample Creator](https://cli.vuejs.org/config/).
+[Garden Hub Design Sample Creator](https://gardenhub.criar.app/).
