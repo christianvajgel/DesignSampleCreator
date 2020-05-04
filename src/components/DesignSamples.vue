@@ -2,7 +2,7 @@
     <div style="margin-bottom: 100px;" id="designDiv">
         <div style="text-align: left; margin: 25px;">
             <h1 class="text-muted">Design Sample Creator</h1>
-            <h5>powered by Vue</h5>
+            <h5>powered by Vue and Google Analytics</h5>
             <h6>© Garden Hub Corp <sup>LGPL-3.0</sup></h6>
             <div>
                 <a :href="`https://github.com/christianvajgel/DesignSampleCreator`" target="_blank">
